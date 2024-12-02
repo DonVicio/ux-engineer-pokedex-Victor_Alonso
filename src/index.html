@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokemon Pokedex</title>
+  <title>Pokémon Pokédex</title>
+  <meta name="description" content="Gotta catch'em all Motherfuckers!">
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/resets.css">
+  <link rel="stylesheet" href="./styles/themes.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+  <header class="header__container">
+    <div class="header__title-container">
+      <img class="header__logo"alt="Logo Pokeball" src="./assets/images/icon_pokeball.svg">
+      <h1 class="header__title">Pokédex</h1>
+    </div>
+    <search class="search__container">
+      <form class="search__form" role="search">
+        <input class="search__input" type="text" name="search" id="pokemon-search" aria-label="Search" placeholder="Search"/>
+        <button class="search__filter-button">#</button>
+      </form>
+    </search>
+  </header>
+  <main class="grid__container">
+    <ul class="pokemon__grid">
+      <li class="pokemon__item"></li>
+    </ul>
+  </main>
   
 </body>
 </html>

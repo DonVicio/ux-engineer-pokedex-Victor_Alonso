@@ -1,0 +1,154 @@
+:root {
+
+  /* Variables reshulonas para cards reshulonas */
+  
+    /* color */
+    --identity-primary: #DC0A2D;
+    --grayscale-white: #fff;
+    --grayscale-background: #efefef;
+    --grayscale-light: #e0e0e0;
+    --grayscale-medium: #666;
+    --grayscale-dark: #212121;
+    --dropshadow-color: rgba(0, 0, 0, 0.2);
+    --innershadow-color: rgba(0, 0, 0, 0.25);
+
+    --type-bug: #A7B723;
+    --type-dark: #75574C;
+    --type-dragon: #7037FF;
+    --type-electric: #F9CF30;
+    --type-fairy: #E69EAC;
+    --type-fighting: #C12239;
+    --type-fire: #F57D31;
+    --type-flying: #A891EC;
+    --type-ghost: #70559B;
+    --type-normal: #AAA67F;
+    --type-grass: #74CB48;
+    --type-ground: #DEC16B;
+    --type-ice: #9AD6DF;
+    --type-poison: #A43E9E;
+    --type-psychic: #FB5584;
+    --type-rock: #B69E31;
+    --type-steel: #B7B9D0;
+    --type-water: #6493EB;
+  
+    /* dimension */
+    --none: 0px;
+    --unit: 1px;
+    --base: 4px;
+    --size50: calc(var(--base) / 2);    /* 2 */
+    --size100: calc(var(--base) * 1);   /* 4 */
+    --size150: calc(var(--base) * 1.5); /* 6 */
+    --size200: calc(var(--base) * 2);   /* 8 */
+    --size250: calc(var(--base) * 2.5); /* 10 */
+    --size300: calc(var(--base) * 3);   /* 12 */
+    --size350: calc(var(--base) * 3.5); /* 14 */
+    --size400: calc(var(--base) * 4);   /* 16 */
+    --size450: calc(var(--base) * 4.5); /* 18 */
+    --size500: calc(var(--base) * 5);   /* 20 */
+    --size600: calc(var(--base) * 6);   /* 24 */
+    --size700: calc(var(--base) * 7);   /* 28 */
+    --size800: calc(var(--base) * 8);   /* 32 */
+    --size850: calc(var(--base) * 8.5);   /* 32 */
+    --size900: calc(var(--base) * 9);   /* 36 */
+    --size1000: calc(var(--base) * 10); /* 40 */
+    --size1200: calc(var(--base) * 12); /* 48 */
+    --size2000: calc(var(--base) * 20); /* 80 */
+    --total: 100%;
+  
+    /* size */
+    --card-width: calc(var(--base) * 72);
+    --card-max-width: calc(var(--base) * 80);
+  
+    /* timing */
+    --anim-dur: 0.3s;
+    --anim-func: ease-in-out;
+    --transition: all var(--anim-dur) var(--anim-func);
+  
+    /* shadow */
+    --inset-shadow: 
+      /* offsetX */ var(--none)
+      /* offsetY */ var(--unit)
+      /* blur */ calc(var(--unit) * 3)
+      /* spread */ var(--unit) 
+      /* color */ var(--innershadow-color);
+    --offset-shadow1: 
+      /* offsetX */ var(--none)
+      /* offsetY */ var(--unit)
+      /* blur */ calc(var(--unit) * 3) 
+      /* spread */ var(--unit) 
+      /* color */ var(--dropshadow-color);
+    --offset-shadow2: 
+      /* offsetX */ var(--none)
+      /* offsetY */ calc(var(--unit) * 3) 
+      /* blur */ var(--size300) 
+      /* spread */ calc(var(--unit) * 3)
+      /* color */ var(--dropshadow-color);
+  
+    /* typography */
+    --main-typography: Poppins, sans-serif;
+
+    --headline:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ bold
+     /* font-size */ var(--size600)/
+     /* line-height */ var(--size800)
+     /* font-family */ Poppins, sans-serif;
+
+    --subtitle1:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ bold
+     /* font-size */ var(--size350)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --subtitle2:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ bold
+     /* font-size */ var(--size300)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --subtitle3:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ bold
+     /* font-size */ var(--size250)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --body1:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ normal
+     /* font-size */ var(--size350)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --body2:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ normal
+     /* font-size */ var(--size300)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --body3:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ normal
+     /* font-size */ var(--size250)/
+     /* line-height */ var(--size400)
+     /* font-family */ Poppins, sans-serif;
+
+     --caption:
+     /* font-style */ normal
+     /* font-variant */ normal
+     /* font-weight */ normal
+     /* font-size */ var(--size200)/
+     /* line-height */ var(--size300)
+     /* font-family */ Poppins, sans-serif;
+  
+  }
