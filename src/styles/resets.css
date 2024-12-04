@@ -23,5 +23,7 @@ body{
   height: 640px;
   padding: var(--size100);
   background-color: var(--identity-primary);
-  border-radius: var(--size600);
+  border-radius: var(--size300);
+  display: flex;
+  flex-direction: column;
 }

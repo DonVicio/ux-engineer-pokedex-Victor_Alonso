@@ -45,13 +45,18 @@
     --size400: calc(var(--base) * 4);   /* 16 */
     --size450: calc(var(--base) * 4.5); /* 18 */
     --size500: calc(var(--base) * 5);   /* 20 */
+    --size550: calc(var(--base) * 5.5); /* 22 */
     --size600: calc(var(--base) * 6);   /* 24 */
+    --size650: calc(var(--base) * 6.5); /* 26 */
     --size700: calc(var(--base) * 7);   /* 28 */
+    --size750: calc(var(--base) * 7.5); /* 30 */
     --size800: calc(var(--base) * 8);   /* 32 */
-    --size850: calc(var(--base) * 8.5);   /* 32 */
+    --size850: calc(var(--base) * 8.5); /* 34 */
     --size900: calc(var(--base) * 9);   /* 36 */
     --size1000: calc(var(--base) * 10); /* 40 */
+    --size1100: calc(var(--base) * 11); /* 44 */
     --size1200: calc(var(--base) * 12); /* 48 */
+    --size1800: calc(var(--base) * 18); /* 72 */
     --size2000: calc(var(--base) * 20); /* 80 */
     --total: 100%;
   
