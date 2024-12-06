@@ -95,6 +95,7 @@
 
 .pokemon__item .pokemon__image{
   width: var(--size1800);
+  height: auto;
   z-index: 1;
 }
 

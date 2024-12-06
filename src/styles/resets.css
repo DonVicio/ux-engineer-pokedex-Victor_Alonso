@@ -27,3 +27,15 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins-Regular.woff2);
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins-Bold.woff2);
+  font-weight: bold;
+}
