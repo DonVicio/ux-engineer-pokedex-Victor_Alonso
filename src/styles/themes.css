@@ -78,6 +78,8 @@
     --size1400: calc(var(--base) * 14); /* 56 */
     --size1800: calc(var(--base) * 18); /* 72 */
     --size2000: calc(var(--base) * 20); /* 80 */
+    --size2100: calc(var(--base) * 21); /* 88 */
+    --size2200: calc(var(--base) * 22); /* 96 */
     --total: 100%;
   
     /* size */
@@ -96,6 +98,11 @@
       /* blur */ calc(var(--unit) * 3)
       /* spread */ var(--unit) 
       /* color */ var(--innershadow-color);
+    --icon-shadow: 
+      /* offsetX */ var(--none)
+      /* offsetY */ var(--unit)
+      /* blur */ var(--unit)
+      /* color */ var(--dropshadow-color);
     --offset-shadow1: 
       /* offsetX */ var(--none)
       /* offsetY */ var(--unit)
