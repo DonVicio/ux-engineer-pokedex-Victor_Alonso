@@ -1,3 +1,5 @@
+// Missing API call
+
 function renderPokemonDetails() {
   const pokemonNumber = pokemon.id.toString().padStart(3, '0');
   const pokemonWeight = (pokemon.weight / 10).toLocaleString(undefined, {minimumFractionDigits:1});
@@ -6,30 +8,17 @@ function renderPokemonDetails() {
   const pokemonDetails = document.querySelector('.pokemon__container');
   pokemonDetails.classList.add('pokemon-type-' + pokemon.types[0].type.name);
 
-  const pokemonHeader = document.querySelector('.pokemon-header__container');
-  pokemonHeader.innerHTML = `
-    <div class="pokemon-header__title-container">
-      <a class="pokemon-header__back-link" href="./" aria-label="Volver a la Pokédex">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.45008 12.9834L2.81675 8.35003C2.76119 8.29448 2.7223 8.23892 2.70008 8.18337C2.67786 8.12781 2.66675 8.0667 2.66675 8.00003C2.66675 7.93337 2.67786 7.87226 2.70008 7.8167C2.7223 7.76114 2.76119 7.70559 2.81675 7.65003L7.46675 3.00003C7.55564 2.91114 7.66675 2.8667 7.80008 2.8667C7.93341 2.8667 8.05008 2.9167 8.15008 3.0167C8.25008 3.1167 8.30008 3.23337 8.30008 3.3667C8.30008 3.50003 8.25008 3.6167 8.15008 3.7167L4.36675 7.50003H12.6334C12.7779 7.50003 12.8973 7.54725 12.9917 7.6417C13.0862 7.73614 13.1334 7.85559 13.1334 8.00003C13.1334 8.14448 13.0862 8.26392 12.9917 8.35837C12.8973 8.45281 12.7779 8.50003 12.6334 8.50003H4.36675L8.16675 12.3C8.25564 12.3889 8.30008 12.5 8.30008 12.6334C8.30008 12.7667 8.25008 12.8834 8.15008 12.9834C8.05008 13.0834 7.93341 13.1334 7.80008 13.1334C7.66675 13.1334 7.55008 13.0834 7.45008 12.9834V12.9834Z"/>
-        </svg>
-      </a><h1 class="pokemon-header__title">${pokemon.name}</h1>
-      <p class="pokemon-header__number">#${pokemonNumber}</p>
-    </div>
-    <div class="pokemon-header__carousel">
-      <a class="pokemon-header-carousel__prev-link carousel__link" href="#" aria-label="Pokémon anterior">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.98345 11.6333L5.68345 8.33329C5.62789 8.27774 5.589 8.22218 5.56678 8.16663C5.54456 8.11107 5.53345 8.04996 5.53345 7.98329C5.53345 7.91663 5.54456 7.85551 5.56678 7.79996C5.589 7.7444 5.62789 7.68885 5.68345 7.63329L9.00011 4.31663C9.10011 4.21663 9.21956 4.16663 9.35845 4.16663C9.49734 4.16663 9.61678 4.21663 9.71678 4.31663C9.81678 4.41663 9.864 4.53885 9.85845 4.68329C9.85289 4.82774 9.80011 4.94996 9.70011 5.04996L6.76678 7.98329L9.71678 10.9333C9.81678 11.0333 9.86678 11.15 9.86678 11.2833C9.86678 11.4166 9.81678 11.5333 9.71678 11.6333C9.61678 11.7333 9.49456 11.7833 9.35011 11.7833C9.20567 11.7833 9.08345 11.7333 8.98345 11.6333V11.6333Z"/>
-        </svg>
-      </a>
-      <img class="pokemon-header-carousel__pokemon-image" alt="${pokemon.name}" src="${pokemon.sprites.other["official-artwork"].front_default}">
-      <a class="pokemon-header-carousel__next-link carousel__link" href="#" aria-label="Pokémon siguiente">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.89997 11.6334C5.81108 11.5222 5.76386 11.4 5.7583 11.2667C5.75275 11.1334 5.79997 11.0167 5.89997 10.9167L8.8333 7.98336L5.8833 5.03336C5.79441 4.94447 5.75275 4.82502 5.7583 4.67502C5.76386 4.52502 5.81108 4.40558 5.89997 4.31669C6.01108 4.20558 6.13052 4.1528 6.2583 4.15836C6.38608 4.16391 6.49997 4.21669 6.59997 4.31669L9.91664 7.63336C9.97219 7.68891 10.0111 7.74447 10.0333 7.80002C10.0555 7.85558 10.0666 7.91669 10.0666 7.98336C10.0666 8.05002 10.0555 8.11113 10.0333 8.16669C10.0111 8.22224 9.97219 8.2778 9.91664 8.33336L6.61664 11.6334C6.51664 11.7334 6.39997 11.7806 6.26664 11.775C6.1333 11.7695 6.01108 11.7222 5.89997 11.6334V11.6334Z"/>
-        </svg>
-      </a>
-    </div>
-  `;
+  const pokemonTitle = document.querySelector('.pokemon-header__title');
+  pokemonTitle.innerHTML = pokemon.name;
+
+  const pokemonId = document.querySelector('.pokemon-header__number');
+  pokemonId.innerHTML = pokemonNumber;
+
+  const pokemonImage = document.querySelector('.pokemon-header-carousel__pokemon-image');
+  pokemonImage.setAttribute("alt", pokemon.name);
+  pokemonImage.setAttribute("src", pokemon.sprites.other["official-artwork"].front_default);
+
+// Missing links between Pokemon
 
   const pokemonTypes = document.querySelector('.pokemon-details__type-categories');
   function pokemonTypeTags() {
@@ -43,36 +32,28 @@ function renderPokemonDetails() {
   }
   pokemonTypeTags();
 
-  const pokemonAbout = document.querySelector('.pokemon-details__about');
-  pokemonAbout.innerHTML = `
-  <ul class="pokemon-details__characteristics">
-    <li class="pokemon-characteristics__item">
-      <div class="characteristics__data-block">
-        <svg class="characteristics__icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.61659 13H12.3833L11.3333 5.66663H4.66659L3.61659 13ZM7.99992 4.66663C8.28881 4.66663 8.5277 4.5694 8.71659 4.37496C8.90547 4.18051 8.99992 3.9444 8.99992 3.66663C8.99992 3.37774 8.90547 3.13885 8.71659 2.94996C8.5277 2.76107 8.28881 2.66663 7.99992 2.66663C7.72214 2.66663 7.48603 2.76107 7.29159 2.94996C7.09714 3.13885 6.99992 3.37774 6.99992 3.66663C6.99992 3.9444 7.09714 4.18051 7.29159 4.37496C7.48603 4.5694 7.72214 4.66663 7.99992 4.66663ZM9.73325 4.66663H11.3333C11.5888 4.66663 11.811 4.74718 11.9999 4.90829C12.1888 5.0694 12.2999 5.27774 12.3333 5.53329L13.3666 12.8666C13.411 13.1666 13.336 13.4305 13.1416 13.6583C12.9471 13.8861 12.6944 14 12.3833 14H3.61659C3.30547 14 3.0527 13.8861 2.85825 13.6583C2.66381 13.4305 2.58881 13.1666 2.63325 12.8666L3.66659 5.53329C3.69992 5.27774 3.81103 5.0694 3.99992 4.90829C4.18881 4.74718 4.41103 4.66663 4.66659 4.66663H6.26659C6.1777 4.51107 6.11103 4.35274 6.06659 4.19163C6.02214 4.03051 5.99992 3.85551 5.99992 3.66663C5.99992 3.11107 6.19436 2.63885 6.58325 2.24996C6.97214 1.86107 7.44436 1.66663 7.99992 1.66663C8.55547 1.66663 9.0277 1.86107 9.41659 2.24996C9.80547 2.63885 9.99992 3.11107 9.99992 3.66663C9.99992 3.85551 9.9777 4.03051 9.93325 4.19163C9.88881 4.35274 9.82214 4.51107 9.73325 4.66663ZM3.61659 13H12.3833H3.61659Z"/>
-        </svg>
-        <p class="characteristics__data">${pokemonWeight} kg</p>
-      </div>
-      <p class="characteristics__data-label">Weight</p>
-    </li>
-    <li class="pokemon-characteristics__item">
-      <div class="characteristics__data-block">
-        <svg class="characteristics__icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 2.33337C4 2.06671 4.1 1.83337 4.3 1.63337C4.5 1.43337 4.73333 1.33337 5 1.33337L11 1.33337C11.2556 1.33337 11.4861 1.43337 11.6917 1.63337C11.8972 1.83337 12 2.06671 12 2.33337V13.6667C12 13.9334 11.8972 14.1667 11.6917 14.3667C11.4861 14.5667 11.2556 14.6667 11 14.6667H5C4.73333 14.6667 4.5 14.5667 4.3 14.3667C4.1 14.1667 4 13.9334 4 13.6667V2.33337ZM5 2.33337L5 13.6667H11V11.5H8V10.5H11V8.50004H8V7.50004H11V5.50004H8V4.50004H11V2.33337L5 2.33337ZM8 4.50004V5.50004V4.50004ZM8 7.50004V8.50004V7.50004ZM8 10.5V11.5V10.5Z"/>
-        </svg>
-        <p class="characteristics__data">${pokemonHeight} m</p>
-      </div>
-      <p class="characteristics__data-label">Height</p>
-    </li>
-    <li class="pokemon-characteristics__item">
-      <div class="characteristics__data-block">
-        <p class="characteristics__data">${pokemon.moves[0].move.name}</p>
-        <p class="characteristics__data">${pokemon.moves[1].move.name}</p>
-      </div>
-      <p class="characteristics__data-label">Moves</p>
-    </li>
-  </ul>
-  <p class="pokemon-details__description">Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.</p>`
+  const pokemonDataWeight = document.querySelector('.characteristics__data-weight .characteristics__data');
+  pokemonDataWeight.innerHTML = `${pokemonWeight} kg`;
+
+  const pokemonDataHeight = document.querySelector('.characteristics__data-height .characteristics__data');
+  pokemonDataHeight.innerHTML = `${pokemonHeight} m`;
+
+  const pokemonMoves = document.querySelector('.characteristics__data-moves');
+  const mainMoves = pokemon.moves.slice(0,2); // This will prevent crahses on 1 element arrays
+  function pokemonMainMoves() {
+    for(let i = 0; i < mainMoves.length; i++) {
+      var move = document.createElement('p');
+      move.innerHTML = pokemon.moves[i].move.name;
+      move.classList.add('characteristics__data');
+      pokemonMoves.appendChild(move);
+    };
+  }
+  pokemonMainMoves();
+
+  // Missing description (not in data model)
+  
+  const pokemonDescription = document.querySelector('.pokemon-details__description');
+  pokemonDescription.innerHTML = `Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.`;
 
   const pokemonStats = document.querySelector('.pokemon-details__statistics');
   function pokemonStatsList() {
