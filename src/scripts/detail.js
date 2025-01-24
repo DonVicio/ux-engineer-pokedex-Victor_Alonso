@@ -1,9 +1,26 @@
-// Missing API call
+const params = new URLSearchParams(document.location.search);
+const pokemonIdparam = params.get("pokemonId");
 
-function renderPokemonDetails() {
+async function getPokemonDetailFromAPI(){
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonIdparam}/`);
+  const data = await response.json();
+  renderPokemonDetails(data);
+}
+
+async function getPokemonDescriptionFromAPI(){
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonIdparam}/`);
+  const data = await response.json();
+  renderPokemonDescription(data);
+}
+
+function renderPokemonDetails(pokemon) {
+
   const pokemonNumber = pokemon.id.toString().padStart(3, '0');
   const pokemonWeight = (pokemon.weight / 10).toLocaleString(undefined, {minimumFractionDigits:1});
   const pokemonHeight = (pokemon.height / 10).toLocaleString(undefined, {minimumFractionDigits:1});
+
+  const pokemonMetaTitle = document.querySelector('title');
+  pokemonMetaTitle.innerHTML = `${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)} Details`;
 
   const pokemonDetails = document.querySelector('.pokemon__container');
   pokemonDetails.classList.add('pokemon-type-' + pokemon.types[0].type.name);
@@ -15,15 +32,23 @@ function renderPokemonDetails() {
   pokemonId.innerHTML = pokemonNumber;
 
   const pokemonImage = document.querySelector('.pokemon-header-carousel__pokemon-image');
-  pokemonImage.setAttribute("alt", pokemon.name);
-  pokemonImage.setAttribute("src", pokemon.sprites.other["official-artwork"].front_default);
+  pokemonImage.alt = pokemon.name;
+  pokemonImage.src = pokemon.sprites.other["official-artwork"].front_default;
 
-// Missing links between Pokemon
+  const pokemonPrev = document.querySelector('.pokemon-header-carousel__prev-link');
+  pokemonPrev.href = `./detail.html?pokemonId=${pokemon.id - 1}`;
+  if (pokemon.id === 1){
+    pokemonPrev.style = `opacity: 0.2; cursor: not-allowed;`;
+    pokemonPrev.href = '';
+  };
+
+  const pokemonNext = document.querySelector('.pokemon-header-carousel__next-link');
+  pokemonNext.href = `./detail.html?pokemonId=${pokemon.id + 1}`;
 
   const pokemonTypes = document.querySelector('.pokemon-details__type-categories');
   function pokemonTypeTags() {
     for(let i = 0; i < pokemon.types.length; i++) {
-      var typeTag = document.createElement('p');
+      let typeTag = document.createElement('p');
       typeTag.innerHTML = pokemon.types[i].type.name;
       typeTag.classList.add('pokemon-details__type');
       typeTag.classList.add('pokemon-details__type-'+pokemon.types[i].type.name);
@@ -42,18 +67,13 @@ function renderPokemonDetails() {
   const mainMoves = pokemon.moves.slice(0,2); // This will prevent crahses on 1 element arrays
   function pokemonMainMoves() {
     for(let i = 0; i < mainMoves.length; i++) {
-      var move = document.createElement('p');
+      let move = document.createElement('p');
       move.innerHTML = pokemon.moves[i].move.name;
       move.classList.add('characteristics__data');
       pokemonMoves.appendChild(move);
     };
   }
   pokemonMainMoves();
-
-  // Missing description (not in data model)
-  
-  const pokemonDescription = document.querySelector('.pokemon-details__description');
-  pokemonDescription.innerHTML = `Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.`;
 
   const pokemonStats = document.querySelector('.pokemon-details__statistics');
   function pokemonStatsList() {
@@ -75,4 +95,46 @@ function renderPokemonDetails() {
 
 }
 
-renderPokemonDetails(pokemon);
+function renderPokemonDescription(pokemon) {
+  
+  const pokemonDescription = document.querySelector('.pokemon-details__description');
+  function swordVersion(entry) {
+    if (entry.version.name === "sword" & entry.language.name === "en"){
+      return entry;
+    }
+  };
+
+  function letsgopikachuVersion(entry) {
+    if (entry.version.name === "lets-go-pikachu" & entry.language.name === "en"){
+      return entry;
+    }
+  };
+
+  function firstEnglishVersion(entry) {
+    if (entry.language.name === "en"){
+      return entry;
+    }
+  };
+
+  const pokemonSwordDescription = pokemon.flavor_text_entries.find(swordVersion);
+  const pokemonLGPDescription = pokemon.flavor_text_entries.find(letsgopikachuVersion);
+  const pokemonFirstDescription = pokemon.flavor_text_entries.find(firstEnglishVersion);
+  
+  function pokemonAPIDescription(){
+    if (pokemonSwordDescription === undefined & pokemonLGPDescription === undefined){
+      return pokemonFirstDescription;
+    }
+    else if  (pokemonSwordDescription === undefined) {
+      return pokemonLGPDescription;
+    }
+    else {
+      return pokemonSwordDescription;
+    }
+  }
+
+  pokemonDescription.innerHTML = `${pokemonAPIDescription().flavor_text}`;
+
+}
+
+getPokemonDetailFromAPI();
+getPokemonDescriptionFromAPI();

@@ -71,9 +71,15 @@ body.pokedex__container{
 .grid__container .pokemon__grid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--size2200), 1fr));
-  padding: var(--size600) var(--size300) var(--none);
+  padding: var(--size300) var(--size300) var(--size300);
   gap: var(--size200);
   list-style: none;
+  overflow-y: scroll;
+  height: 524px;
+}
+
+.grid__container .pokemon__grid::-webkit-scrollbar {
+  width: 0;
 }
 
 .grid__container .pokemon__grid .pokemon__item-link{
@@ -128,6 +134,9 @@ body.pokedex__container{
   color: var(--grayscale-dark);
   z-index: 1;
   text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* POKEMON DETAILS STYLES */
@@ -171,6 +180,9 @@ body.pokemon__container{
   color: var(--grayscale-white);
   flex-grow: 1;
   text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pokemon-header__title-container .pokemon-header__number{
@@ -245,7 +257,8 @@ body.pokemon__container{
 }
 
 .pokemon-details__about .pokemon-details__characteristics{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size2200), 1fr));
   align-items: stretch;
   justify-content: center;
 }
@@ -294,8 +307,8 @@ body.pokemon__container{
 
 .pokemon-details__about .pokemon-details__description{
   flex-grow: 1;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
  .pokemon-details__container .pokemon-details__stats{
@@ -346,8 +359,8 @@ body.pokemon__container{
 
 .pokemon-details__stats .pokemon-statistics__item .statistics__progress-bar .statistics__progress{
   height: var(--size100);
-  width: 5px;
 }
+
 
 /* Pokemon type styling */
 
@@ -509,7 +522,7 @@ body.pokemon-type-fighting .statistics__progress-bar{background-color: var(--typ
 body.pokemon-type-fire .statistics__progress-bar{background-color: var(--type-fire-20);}
 body.pokemon-type-flying .statistics__progress-bar{background-color: var(--type-flying-20);}
 body.pokemon-type-ghost .statistics__progress-bar{background-color: var(--type-ghost-20);}
-body.pokemon-type-elgrassectric .statistics__progress-bar{background-color: var(--type-grass-20);}
+body.pokemon-type-grass .statistics__progress-bar{background-color: var(--type-grass-20);}
 body.pokemon-type-ground .statistics__progress-bar{background-color: var(--type-ground-20);}
 body.pokemon-type-ice .statistics__progress-bar{background-color: var(--type-ice-20);}
 body.pokemon-type-normal .statistics__progress-bar{background-color: var(--type-normal-20);}
