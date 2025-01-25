@@ -78,8 +78,13 @@
     --size1400: calc(var(--base) * 14); /* 56 */
     --size1800: calc(var(--base) * 18); /* 72 */
     --size2000: calc(var(--base) * 20); /* 80 */
-    --size2100: calc(var(--base) * 21); /* 88 */
-    --size2200: calc(var(--base) * 22); /* 96 */
+    --size2100: calc(var(--base) * 21); /* 84 */
+    --size2200: calc(var(--base) * 22); /* 88 */
+    --size2300: calc(var(--base) * 23); /* 92 */
+    --size2400: calc(var(--base) * 24); /* 96 */
+    --size2500: calc(var(--base) * 25); /* 100 */
+    --size2600: calc(var(--base) * 26); /* 104 */
+    --size2700: calc(var(--base) * 27); /* 108 */
     --total: 100%;
   
     /* size */

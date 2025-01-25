@@ -70,6 +70,7 @@ body.pokedex__container{
 
 .grid__container .pokemon__grid{
   display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(max-content, var(--size2700)));
   grid-template-columns: repeat(auto-fill, minmax(var(--size2200), 1fr));
   padding: var(--size300) var(--size300) var(--size300);
   gap: var(--size200);
