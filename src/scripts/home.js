@@ -41,7 +41,7 @@ function searchPokemon() {
   let ul = document.querySelector('.pokemon__grid');
   let li = ul.getElementsByTagName("li");
 
-  for (i = 0; i < li.length; i++) {
+  for (let i = 0; i < li.length; i++) {
     let pokemonName = li[i].querySelector('.pokemon__name');
     let pokemonNumber = li[i].querySelector('.pokemon__number');
     let txtValue = pokemonName.textContent || pokemonName.innerText;
