@@ -25,11 +25,16 @@ function renderPokemonDetails(pokemon) {
   const pokemonDetails = document.querySelector('.pokemon__container');
   pokemonDetails.classList.add('pokemon-type-' + pokemon.types[0].type.name);
 
-  const pokemonTitle = document.querySelector('.pokemon-header__title');
+  const pokemonHeader = document.querySelector('.pokemon-header__title-container');
+  const pokemonTitle = document.createElement('h1');
+  pokemonTitle.classList.add('pokemon-header__title');
   pokemonTitle.innerHTML = pokemon.name;
-
-  const pokemonId = document.querySelector('.pokemon-header__number');
+  const pokemonId = document.createElement('p');
+  pokemonId.classList.add('pokemon-header__number');
   pokemonId.innerHTML = pokemonNumber;
+  pokemonHeader.appendChild(pokemonTitle);
+  pokemonHeader.appendChild(pokemonId);
+
 
   const pokemonImage = document.querySelector('.pokemon-header-carousel__pokemon-image');
   pokemonImage.alt = pokemon.name;
@@ -78,8 +83,8 @@ function renderPokemonDetails(pokemon) {
   const pokemonStats = document.querySelector('.pokemon-details__statistics');
   function pokemonStatsList() {
     for(let i = 0; i < pokemon.stats.length; i++) {
-      var statsShortName = ['HP','ATK','DEF','SATK','SDEF','SPD'];
-      var statsItem = document.createElement('li');
+      const statsShortName = ['HP','ATK','DEF','SATK','SDEF','SPD'];
+      const statsItem = document.createElement('li');
       statsItem.innerHTML = `
         <p class="statistics__label">${statsShortName[i]}</p>
         <div class="statistics__divider"></div>

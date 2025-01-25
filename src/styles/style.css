@@ -157,7 +157,7 @@ body.pokemon__container{
 
 .pokemon-header__container{
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
 }
 
 .pokemon-header__title-container{
@@ -274,28 +274,15 @@ body.pokemon__container{
   border-right: var(--unit) solid var(--grayscale-light);
 }
 
-.pokemon-details__about .pokemon-characteristics__item .characteristics__data-block{
-  align-items: center;
-  flex-grow: 1;
-}
-
-.pokemon-details__about .pokemon-characteristics__item .characteristics__data-label{
-  font: var(--caption);
-  color: var(--grayscale-medium);
-}
-
-.pokemon-details__about .pokemon-characteristics__item  .characteristics__data-block{
-  display: flex;
-  gap: var(--size200);
-  flex-grow: 1;
-}
-
-.pokemon-details__about .pokemon-characteristics__item  .characteristics__data-block .characteristics__icon{
-  fill: var(--grayscale-dark);
-}
-
 .pokemon-details__about .pokemon-characteristics__item:last-child{
   border: none;
+}
+
+.pokemon-details__about .pokemon-characteristics__item .characteristics__data-block{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: var(--size200);
 }
 
 .pokemon-details__about .pokemon-characteristics__item:last-child .characteristics__data-block{
@@ -304,6 +291,15 @@ body.pokemon__container{
   align-items: flex-start;
   gap: 0;
   text-transform: capitalize;
+}
+
+.pokemon-details__about .pokemon-characteristics__item  .characteristics__data-block .characteristics__icon{
+  fill: var(--grayscale-dark);
+}
+
+.pokemon-details__about .pokemon-characteristics__item .characteristics__data-label{
+  font: var(--caption);
+  color: var(--grayscale-medium);
 }
 
 .pokemon-details__about .pokemon-details__description{
@@ -442,76 +438,58 @@ body.pokemon-type-water .statistics__progress
 {background-color: var(--type-water);}
 
 body.pokemon-type-bug .statistics__label, 
-body.pokemon-type-bug .pokemon-details__title, 
-body.pokemon-type-bug .statistics__label
+body.pokemon-type-bug .pokemon-details__title
 {color: var(--type-bug);}
 body.pokemon-type-dark .statistics__label, 
-body.pokemon-type-dark .pokemon-details__title, 
-body.pokemon-type-dark .statistics__label
+body.pokemon-type-dark .pokemon-details__title
 {color: var(--type-dark);}
 body.pokemon-type-dragon .statistics__label,
-body.pokemon-type-dragon .pokemon-details__title, 
-body.pokemon-type-dragon .statistics__label
+body.pokemon-type-dragon .pokemon-details__title
 {color: var(--type-dragon);}
 body.pokemon-type-electric .statistics__label, 
-body.pokemon-type-electric .pokemon-details__title, 
-body.pokemon-type-electric .statistics__label
+body.pokemon-type-electric .pokemon-details__title
 {color: var(--type-electric);}
 body.pokemon-type-fairy .statistics__label, 
-body.pokemon-type-fairy .pokemon-details__title, 
-body.pokemon-type-fairy .statistics__label
+body.pokemon-type-fairy .pokemon-details__title
 {color: var(--type-fairy);}
 body.pokemon-type-fighting .statistics__label, 
-body.pokemon-type-fighting .pokemon-details__title, 
-body.pokemon-type-fighting .statistics__label
+body.pokemon-type-fighting .pokemon-details__title
 {color: var(--type-fighting);}
 body.pokemon-type-fire .statistics__label, 
-body.pokemon-type-fire .pokemon-details__title, 
-body.pokemon-type-fire .statistics__label
+body.pokemon-type-fire .pokemon-details__title
 {color: var(--type-fire);}
 body.pokemon-type-flying .statistics__label, 
-body.pokemon-type-flying .pokemon-details__title, 
-body.pokemon-type-flying .statistics__label
+body.pokemon-type-flying .pokemon-details__title
 {color: var(--type-flying);}
 body.pokemon-type-ghost .statistics__label, 
-body.pokemon-type-ghost .pokemon-details__title, 
-body.pokemon-type-ghost .statistics__label
+body.pokemon-type-ghost .pokemon-details__title
 {color: var(--type-ghost);}
 body.pokemon-type-grass .statistics__label, 
-body.pokemon-type-grass .pokemon-details__title, 
-body.pokemon-type-grass .statistics__label
+body.pokemon-type-grass .pokemon-details__title
 {color: var(--type-grass);}
 body.pokemon-type-ground .statistics__label, 
-body.pokemon-type-ground .pokemon-details__title, 
-body.pokemon-type-ground .statistics__label
+body.pokemon-type-ground .pokemon-details__title
 {color: var(--type-ground);}
 body.pokemon-type-ice .statistics__label, 
-body.pokemon-type-ice .pokemon-details__title, 
-body.pokemon-type-ice .statistics__label
+body.pokemon-type-ice .pokemon-details__title
 {color: var(--type-ice);}
 body.pokemon-type-normal .statistics__label, 
-body.pokemon-type-normal .pokemon-details__title, 
-body.pokemon-type-normal .statistics__label
+body.pokemon-type-normal .pokemon-details__title
 {color: var(--type-normal);}
 body.pokemon-type-poison .statistics__label, 
-body.pokemon-type-poison .pokemon-details__title, 
-body.pokemon-type-poison .statistics__label
+body.pokemon-type-poison .pokemon-details__title
 {color: var(--type-poison);}
 body.pokemon-type-psychic .statistics__label, 
-body.pokemon-type-psychic .pokemon-details__title, 
-body.pokemon-type-psychic .statistics__label
+body.pokemon-type-psychic .pokemon-details__title
 {color: var(--type-psychic);}
 body.pokemon-type-rock .statistics__label, 
-body.pokemon-type-rock .pokemon-details__title, 
-body.pokemon-type-rock .statistics__label
+body.pokemon-type-rock .pokemon-details__title
 {color: var(--type-rock);}
 body.pokemon-type-steel .statistics__label, 
-body.pokemon-type-steel .pokemon-details__title, 
-body.pokemon-type-steel .statistics__label
+body.pokemon-type-steel .pokemon-details__title
 {color: var(--type-steel);}
 body.pokemon-type-water .statistics__label, 
-body.pokemon-type-water .pokemon-details__title, 
-body.pokemon-type-water .statistics__label
+body.pokemon-type-water .pokemon-details__title
 {color: var(--type-water);}
 
 body.pokemon-type-bug .statistics__progress-bar{background-color: var(--type-bug-20);}
