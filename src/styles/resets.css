@@ -10,7 +10,6 @@ html{
   background-color: var(--grayscale-background);
   color: var(--grayscale-dark);
   display: grid;
-  width: calc(100vw - var(--size500));
   height: calc(100vh - var(--size500));
   justify-content: center;
   align-items: center;
