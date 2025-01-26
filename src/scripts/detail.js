@@ -82,15 +82,15 @@ function renderPokemonDetails(pokemon) {
 
   const pokemonStats = document.querySelector('.pokemon-details__statistics');
   function pokemonStatsList() {
-    for(let i = 0; i < pokemon.stats.length; i++) {
+    for(let stat of pokemon.stats) {
       const statsShortName = ['HP','ATK','DEF','SATK','SDEF','SPD'];
       const statsItem = document.createElement('li');
       statsItem.innerHTML = `
-        <p class="statistics__label">${statsShortName[i]}</p>
+        <p class="statistics__label">${statsShortName[pokemon.stats.indexOf(stat)]}</p>
         <div class="statistics__divider"></div>
-        <p class="statistics__value">${pokemon.stats[i].base_stat.toString().padStart(3, '0')}</p>
+        <p class="statistics__value">${stat.base_stat.toString().padStart(3, '0')}</p>
         <div class="statistics__progress-bar">
-          <div class="statistics__progress" style="width:${pokemon.stats[i].base_stat}px"></div>
+          <div class="statistics__progress" style="width:${stat.base_stat}px"></div>
         </div>`;
       statsItem.classList.add('pokemon-statistics__item');
       pokemonStats.appendChild(statsItem);
