@@ -39,18 +39,19 @@ function searchPokemon() {
   let input = document.querySelector('.search__input');
   let filter = input.value.toUpperCase();
   let ul = document.querySelector('.pokemon__grid');
-  let li = ul.getElementsByTagName("li");
+  let li = ul.getElementsByTagName('li');
 
-  for (let i = 0; i < li.length; i++) {
-    let pokemonName = li[i].querySelector('.pokemon__name');
-    let pokemonNumber = li[i].querySelector('.pokemon__number');
+  for (let item of li) {
+    let pokemonName = item.querySelector('.pokemon__name');
+    let pokemonNumber = item.querySelector('.pokemon__number');
     let txtValue = pokemonName.textContent || pokemonName.innerText;
     let numValue = pokemonNumber.textContent || pokemonNumber.innerText;
     if ((txtValue.toUpperCase().indexOf(filter) > -1) || (numValue.toUpperCase().indexOf(filter) > -1))  {
-      li[i].style.display = "";
+      item.style.display = "";
     } else {
-      li[i].style.display = "none";
+      item.style.display = "none";
     }
   }
   
 }
+
